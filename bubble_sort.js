@@ -34,12 +34,19 @@ function fun(arr,j,bar){
     bar[j+1].style['border-left']="15px solid blue";
 }    
     
+function fun3(arr,j,bar){
+    bar[j].style['border-left']="15px solid yellow";
+}
+
+
 var len = b.length,
         i, j, stop;
     var adder = 0;
     var del=50;
     for (i=0; i < len; i++){
+    
         for (j=0, stop=len-i; j < stop; j++){
+           
             if (b[j] > b[j+1]){
                 var temp1=b[j];
                 b[j]=b[j+1];
@@ -50,7 +57,10 @@ var len = b.length,
                 setTimeout(fun,adder,arr,j,bar);
                 
             }
+            
         }
+        adder+=del;
+        setTimeout(fun3,adder,arr,len-1-i,bar);
     }
 
         
