@@ -17,8 +17,8 @@ function func(){
     }
 
     function fun1(arr,i,min_idx){
-        bar[i].style['border-left']="15px solid green";
-        bar[min_idx].style['border-left']="15px solid red";
+        bar[i].style['border-left']="5px solid green";
+        bar[min_idx].style['border-left']="5px solid red";
     }
 
     function fun(arr,i,min_idx){
@@ -27,13 +27,13 @@ function func(){
         arr[min_idx]=temp;
         bar[i].style.height=arr[i];
         bar[min_idx].style.height=arr[min_idx];
-        bar[i].style['border-left']="15px solid blue";
-        bar[min_idx].style['border-left']="15px solid blue";
+        bar[i].style['border-left']="5px solid blue";
+        bar[min_idx].style['border-left']="5px solid blue";
     }
 
     var min_idx;  
     var add=0;
-    var del=300;
+    var del=Math.floor((20000/Math.floor(speed)))-100;
     for (let i = 0; i < bar.length-1; i++)  
     {  
         // Find the minimum element in unsorted array  
@@ -47,9 +47,9 @@ function func(){
         b[i]=b[min_idx];
         b[min_idx]=temp;
         
-        add+=del;
+        add+=del/2;
         setTimeout(fun1,add,arr,i,min_idx);
-        add+=del;
+        add+=del/2;
         setTimeout(fun,add,arr,i,min_idx);
         
 

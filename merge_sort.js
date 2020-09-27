@@ -1,6 +1,7 @@
 var a =document.getElementById("merge_sort");
 a.addEventListener("click",func);
 
+
 function func(){
     arr=[]
     arr_sizes=[]
@@ -21,47 +22,47 @@ function func(){
     function fun(arr,L,k,i,bar){
         arr[k]=L[i]+"px";
         bar[k].style.height=arr[k];
-        bar[k].style['border-left']="15px solid blue";
+        bar[k].style['border-left']="5px solid blue";
     }
 
     function fun1(arr,R,k,j,bar){
         arr[k]=R[j]+"px";
         bar[k].style.height=arr[k];
-        bar[k].style['border-left']="15px solid blue";
+        bar[k].style['border-left']="5px solid blue";
     }
 
     function fun2(arr,L,k,i,bar){
         arr[k]=L[i]+"px";
         bar[k].style.height=arr[k];
-        bar[k].style['border-left']="15px solid blue";
+        bar[k].style['border-left']="5px solid blue";
     }
 
     function fun3(arr,R,k,j,bar){
         arr[k]=R[j]+"px";
         bar[k].style.height=arr[k];
-        bar[k].style['border-left']="15px solid blue";
+        bar[k].style['border-left']="5px solid blue";
     }
 
 function fun4(arr,L,k,i,bar){
-    bar[k].style['border-left']="15px solid green";
+    bar[k].style['border-left']="5px solid green";
 }
 
 function fun5(arr,R,k,j,bar){
-    bar[k].style['border-left']="15px solid green";
+    bar[k].style['border-left']="5px solid green";
 }
 
 function fun6(arr,L,k,i,bar){
-    bar[k].style['border-left']="15px solid green";
+    bar[k].style['border-left']="5px solid green";
 }
 
 function fun7(arr,R,k,j,bar){
-    bar[k].style['border-left']="15px solid green";
+    bar[k].style['border-left']="5px solid green";
 }
 
 
 
 var add=0;
-var del=100;
+var del=Math.floor((20000/Math.floor(speed)))-200;
 
 
     function merge(b,arr, l, m, r,bar) 
@@ -87,17 +88,17 @@ var del=100;
     while (i < n1 && j < n2) { 
         if (L[i] <= R[j]) { 
             b[k] = L[i];
-            add+=del;
+            add+=del/8;
             setTimeout(fun4,add,arr,L,k,i,bar);
-            add+=del;
+            add+=del/8;
             setTimeout(fun,add,arr,L,k,i,bar); 
             i++; 
         } 
         else { 
             b[k] = R[j];
-            add+=del;
+            add+=del/8;
             setTimeout(fun5,add,arr,R,k,j,bar);
-            add+=del;
+            add+=del/8;
             setTimeout(fun1,add,arr,R,k,j,bar); 
             j++; 
         } 
@@ -106,18 +107,18 @@ var del=100;
 
     while (i < n1) { 
         b[k] = L[i];
-        add+=del;
+        add+=del/8;
         setTimeout(fun6,add,arr,L,k,i,bar);
-        add+=del;
+        add+=del/8;
         setTimeout(fun2,add,arr,L,k,i,bar); 
         i++; 
         k++; 
     } 
     while (j < n2) { 
         b[k] = R[j];
-        add+=del;
+        add+=del/8;
         setTimeout(fun7,add,arr,R,k,j,bar);
-        add+=del;
+        add+=del/8;
         setTimeout(fun3,add,arr,R,k,j,bar); 
         j++; 
         k++; 
