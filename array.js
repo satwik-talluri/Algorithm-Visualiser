@@ -48,6 +48,8 @@ new_array.addEventListener("click",generate);
 
 function generate(){
     x.innerHTML="";
+    document.getElementById("size").value=num_original;
+
     for(let i=0;i<num_original;i++){
         var height=Math.floor(300*Math.random())+20;
         var y=document.createElement("div");
@@ -60,8 +62,9 @@ function generate(){
 
 function generate1(){
     x.innerHTML="";
+
     for(let i=0;i<num_size;i++){
-        var height=Math.floor(500*Math.random())+20;
+        var height=Math.floor(300*Math.random())+20;
         var y=document.createElement("div");
         y.style=`border-left: 15px solid blue;height:${height}px; margin: 6px;margin-top:50px`;
         x.appendChild(y); 
